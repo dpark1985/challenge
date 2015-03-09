@@ -1,0 +1,142 @@
+@MainMenu : 94px;
+@SideMenu : 160px;
+@MainHeader : 42px;
+@footNav : 30px;
+
+html, body{
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+a{
+	text-decoration: none;
+	cursor: pointer;
+}
+ul, ol, dl, li, dt, dd{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+
+
+
+
+
+
+body{
+
+
+	#mainMenu{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: @MainMenu;
+		bottom: 0;
+		background: url("../img/bg_header.gif") left top repeat-y;
+
+		#logo{
+			width: @MainMenu;
+			height: @MainHeader;
+			display: block;
+			background: url("../img/9545.png");
+				span{
+					display: none;
+				}
+		}
+		#Menulist{
+			width: @MainMenu;
+
+	
+
+			li{
+				visibility: visible;
+				border-bottom: 1px solid white;
+				display: block;
+
+				a{
+					height: 92px;	
+					line-height: 92px;
+					width: @MainMenu;
+					display: block;
+					text-align: center;
+					font-weight: bold;
+					color: white;
+					background-color: transparent;
+				}
+				a:hover{
+					text-decoration: none;
+					color: white;
+					background-color: blue;
+				}
+			}
+		}
+	}
+	#container{
+		position: absolute;
+		left: @MainMenu;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		
+	
+	
+		#header{
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			height: @MainHeader;
+			background-color: #04b09a;
+
+			#slideHide{
+				position: absolute;
+				top: 6px;
+				left: 15px;
+				bottom: 6px;
+				width: 36px;
+				background-color: red;
+			}
+
+		}
+		#sideMenu{
+			position: absolute;
+			left: 0;
+			top: @MainHeader;
+			bottom: 0;
+			width: @SideMenu;
+			background-color: yellow;
+		}
+		#content{
+			position: absolute;
+			left: @SideMenu;
+			right: 0;
+			top: @MainHeader;
+			bottom: 0;
+
+
+			#main{
+				position: absolute;
+				top: 0;
+				bottom: @footNav;
+				left: 0;
+				right: 0;
+				height: auto !important;
+
+			}
+			#footer{
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: @footNav;
+				background-color: #04b09a;
+			}
+		}
+	}
+}
+
+
