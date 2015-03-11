@@ -1,6 +1,16 @@
-exports.active = function(router, db){
-	router.get('/', function(req, res, next) {
-		res.render('index', { title: 'Express Testing' });
+exports.active = function(app, everyauth, db){
+	app.get('/', function(req, res, next) {
+		isLogin(req, res, function(user){
+			res.render('index', { 
+				user: user.name,
+			});
+		}, function(){
+			res.render('index', { 
+				user: 'Please login'
+			});
+		});		
 	});
+	app.post('/', function(req, res, next){
 
+	});
 };

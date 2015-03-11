@@ -35,11 +35,11 @@ exports.active = function(nconf){
 	});
 
 	//기본 함수 추출
-	var parse = require('express/node_modules/cookie').parese;
-	//var parseSC = require('express/node_modules/cookie-signature').sign;
+	var parse = require('express/node_modules/cookie').parse;
+	var parseSC = require('cookie-parser/lib/parse').signedCookies;
 
 	global.parseCookie = function(cookie){
-		return parseSc(parse(cookie), 'your secret here');
+		return parseSC(parse(cookie), 'your secret here');
 	};
 
 	global.getCode = function(code){
