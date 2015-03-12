@@ -1,142 +1,143 @@
-@MainMenu : 94px;
-@SideMenu : 160px;
-@MainHeader : 42px;
-@footNav : 30px;
+@tWidth : 1000px;
+
+@atCenter : 0 auto;
+
+@topNavH : 30px;
+@topNavBG : #303030;
+
+@navMenuH : 100px;
 
 html, body{
 	padding: 0;
 	margin: 0;
 	width: 100%;
 	height: 100%;
+	border: 0;
+	background-color: #EEEEEE;
 }
-
-a{
-	text-decoration: none;
-	cursor: pointer;
-}
-ul, ol, dl, li, dt, dd{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-
-
-
-
-
 
 
 body{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
 
-
-	#mainMenu{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: @MainMenu;
-		bottom: 0;
-		background: url("../img/bg_header.gif") left top repeat-y;
-
-		#logo{
-			width: @MainMenu;
-			height: @MainHeader;
-			display: block;
-			background: url("../img/9545.png");
-				span{
-					display: none;
-				}
+	header{
+		display: block;
+		height: @topNavH;
+		width: 100%;
+		background-color: @topNavBG;
+		div{
+			width: @tWidth;
+			height: 100%;
+			margin: @atCenter;
+			span{
+				float: right;
+				color: white;
+				line-height: @topNavH;
+				margin-left: 10px;
+			}
 		}
-		#Menulist{
-			width: @MainMenu;
+	}
 
+	#wrapper{
+		width: @tWidth;
 	
+		margin: @atCenter;
+		display: block;
+	
+		#NavMenu{
+			
+			height: @navMenuH;
+			
+			position: relative;
 
-			li{
-				visibility: visible;
-				border-bottom: 1px solid white;
+			#logo{
+				width: 350px;
+				height: 100%;
+				float: left;
+			}
+			#NavLinks{
+				width: 650px;
+				height: 100%;
+				margin-left: 350px;
+				
+				img{
+					width: 130px;
+					height: 100px;
+					float: left;
+				}
+
+
+
+			}
+
+		}
+
+		#dummyPlaceholder{
+			height: 15px;
+			display: block;
+		
+		}
+
+		#challenge{
+			height: 250px;
+			display: block;
+
+			#newChallenge{
+				height: 100%;
+				width: 350px;
 				display: block;
+				float: left;
+				background-color: green;
 
 				a{
-					height: 92px;	
-					line-height: 92px;
-					width: @MainMenu;
 					display: block;
+					height: 185px;
+					width: 300px;
+					line-height: 185px;
 					text-align: center;
-					font-weight: bold;
-					color: white;
-					background-color: transparent;
+					margin: 32.5px auto;
+
+					background-color: yellow;
 				}
 				a:hover{
-					text-decoration: none;
-					color: white;
-					background-color: blue;
+					background-color: orange;
+				}
+
+			}
+			#adds{
+				height: 100%;
+				width: 650px;
+				display: block;
+				float:left;
+		
+				#carousel-example-generic{
+					height: 250px;
 				}
 			}
+
 		}
+
+
+		#test{
+
+		}
+
+
 	}
-	#container{
-		position: absolute;
-		left: @MainMenu;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		
-	
-	
-		#header{
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			height: @MainHeader;
-			background-color: #04b09a;
 
-			#slideHide{
-				position: absolute;
-				top: 6px;
-				left: 15px;
-				bottom: 6px;
-				width: 36px;
-				background-color: red;
-			}
-
-		}
-		#sideMenu{
-			position: absolute;
-			left: 0;
-			top: @MainHeader;
-			bottom: 0;
-			width: @SideMenu;
-			background-color: yellow;
-		}
-		#content{
-			position: absolute;
-			left: @SideMenu;
-			right: 0;
-			top: @MainHeader;
-			bottom: 0;
-
-
-			#main{
-				position: absolute;
-				top: 0;
-				bottom: @footNav;
-				left: 0;
-				right: 0;
-				height: auto !important;
-
-			}
-			#footer{
-				position: absolute;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				height: @footNav;
-				background-color: #04b09a;
-			}
-		}
+	footer{
+		display: block;
+		height: 300px;
+		width: 100%;
+		margin-top: 100px;
+		background-color: @topNavBG;
 	}
+
+
+
+
+
+
 }
-
-

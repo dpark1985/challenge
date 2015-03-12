@@ -4,13 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Bootstrap 101 Template</title>
 
 
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+   
 
     <!-- Bootstrap -->
     <link href="/lib/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CustomCSS -->
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet/less" type="text/css" href="/stylesheets/common.less" />
+    <link rel="stylesheet/less" type="text/css" href="/stylesheets/login.less" />
 
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,45 +25,146 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
 
-      <script src="/socket.io/socket.io.js"></script>
-
-
-      <script>
-
-        
-      </script>
-
-</head>
-<body>
-    
-
-    <form class="form-inline" method="post">
-      <div class="form-group">
-        <label class="sr-only" for="exampleInputEmail3">ID</label>
-        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Enter id" name="login">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="exampleInputPassword3">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password" name="password">
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> Remember me
-        </label>
-      </div>
-      <button type="submit" class="btn btn-default">Sign in</button>
-    </form>
-
-
-
-
-
-
-
+    <script src="/lib/less.min.js"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/lib/jquery-1.11.2.min.js"></script>
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+        
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- 소켓 팩토리 -->
+    <script>
+      var socketCallback;
+
+      var socket = io.connect();
+      socket.on('message', function(data){
+        socketCallback && socketCallback(data);
+      });
+
+    </script>
+
+    <script>
+      $(document).ready(function(){
+        
+
+      });
+
+
+
+
+      
+    </script>
+
+
+</head>
+<body>
+
+  <header>
+    <div>
+      <span id="customCenter"><a href="#">고객센터</a></span>
+
+      <span id="span2">|</span>
+      <span id="register"><a href="/register">회원가입</a></span>
+      <span id="span1">|</span>
+      <span id="login"><a href="/login">로그인</a></span>
+    </div>
+  </header>
+
+  <div id="wrapper">
+   
+    <div id="NavMenu">
+      <div id="logo">
+        <img src="http://dummyimage.com/350x100/045408/7fdbc6&text=LOGO" />
+      </div>
+      <div id="NavLinks">
+        <a href="#"><img src="http://dummyimage.com/130x100/ff7ddf/2f4540&text=Links" /></a>
+        <a href="#"><img src="http://dummyimage.com/130x100/ff7ddf/2f4540&text=Links" /></a>
+        <a href="#"><img src="http://dummyimage.com/130x100/ff7ddf/2f4540&text=Links" /></a>
+        <a href="#"><img src="http://dummyimage.com/130x100/ff7ddf/2f4540&text=Links" /></a>
+        <a href="#"><img src="http://dummyimage.com/130x100/ff7ddf/2f4540&text=Links" /></a>
+      </div>
+    </div>
+
+    <div id="dummyPlaceholder"></div>
+
+   
+   
+    <div id="loginHeader">
+      <h1><STRONG>로그인</STRONG></h1>
+      <h2><STRONG>Challenge</STRONG>에 오신 것을 환영합니다.</h2>
+    </div>
+
+
+
+    <div id="loginContent">
+      <div id="loginForm">
+
+        <form class="form-horizontal" method="post">
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3" placeholder="Id" name="login">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Remember me
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Sign in</button>
+            </div>
+          </div>
+        </form>
+
+
+      </div>
+
+      <div id="loginAdd">
+        <a href="#"><img src="http://dummyimage.com/450x174/ff7ddf/2f4540&text=Link" /></a>
+
+      </div>
+
+
+    </div>
+
+
+    
+
+
+
+
+  </div>
+  
+  
+  <footer>
+      
+  </footer>
+
+
+
+
+
+  
+
+
+
+    
+
 </body>
 </html>
