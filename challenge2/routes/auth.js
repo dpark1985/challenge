@@ -92,7 +92,7 @@ exports.active = function(everyauth, db){
 			if(error){
 				promise.fulfill([getCode('auth:1')]);
 			} else if(user){
-				//console.log(user);
+
 
 				promise.fulfill(user);
 			} else{

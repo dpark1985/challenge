@@ -1,56 +1,68 @@
-@tWidth : 1000px;
-
-@atCenter : 0 auto;
-
-@topNavH : 30px;
-@topNavBG : #303030;
-
-@navMenuH : 100px;
+@mainWidth: 990px;
+@bgColor: #ECF0F1;
+@layerColor: #FFF;
+@borderColor: #3498DB;
 
 body{
-	#loginHeader{
-		margin-top: 100px;
-	}
-	#loginContent{
-		width: @tWidth;
-		height: 225px;
-		display: block;
-		border: 1px solid black;
+	#wrapper{
+		height: 500px;
+		width: @mainWidth;
+		margin: 0 auto;
+		background-color: @layerColor;
+		border: 1px solid @borderColor;
 
-		#loginForm{
-			width: (@tWidth/2)-1;
-			height: 223px;
-			display: block;
-
-			float: left;
-
-			form{
-				width: 450px;
-				
-				margin: auto;
-				margin-top: 24.5px;
+		#loginHeader{
+			margin: 20px 0 0 50px;
+			h1{
+				font-size: 3em;
 			}
-		
+			h2{
+				font-size: 1em;
+			}
 		}
+		#loginContent{
+			width: 100%;
+			height: 225px;
+			margin-top: 50px;
 
-		#loginAdd{
-			width: (@tWidth/2)-1;
-			height: 223px;
-			display: block;
 
-			float: left;
+			#loginForm{
+				width: 494px;
+				height: 223px;
 
-			background-color: red;
 
-			a{
-				display: block;
-				line-height: 174px;
-				width: 450px;
-				height: 174px;
-				margin: 24.5px auto;
-				
+				float: left;
+
+				form{
+					width: 450px;
+					margin: auto;
+					margin-top: 24.5px;
+				}
+			
 			}
 
+			#loginAdd{
+				float: left;
+				margin-right: 14px;
+				width: 480px;
+				height: 225px;
+
+				border: 1px solid @borderColor;
+				box-sizing: border-box;
+
+
+				a{
+					display: block;
+					width: 480px;
+					height: 225px;
+
+					line-height: 225px;
+					text-align: center;
+				}
+
+			}
 		}
+
 	}
+
 }
