@@ -26,14 +26,13 @@
       <![endif]-->
 
 
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/lib/angular.min.js"></script>
+    
     <script src="/lib/jquery-1.11.2.min.js"></script>
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
-        
     <script src="/lib/less.min.js"></script>
+   
+    <script src="/lib/sportschallenge.js"></script>
    
     <script src="/socket.io/socket.io.js"></script>
 
@@ -50,31 +49,11 @@
 
 
 </head>
-<body>
+<body ng-app="SportsChallenge">
 
+  <sc-header></sc-header>
   
-   <header>
-    <div id="navLink">
-      <span id="customCenter"><a href="#">고객센터</a></span>  
-      
-      <span id="span2">|</span>
-      <span id="register"><a href="/register">회원가입</a></span>
-      <span id="span1">|</span>
-      <span id="login"><a href="/login">로그인</a></span>
-    </div>
-    <div id="navMainLink">
-      <div>
-        <a href="/" id="logo">LOGO</a>
-        <a href="#" class="headerLinks">포럼</a>
-        <a href="#" class="headerLinks">커뮤니타</a>
-        <a href="#" class="headerLinks">장터</a>
-        <a href="#" class="headerLinks">이벤트</a>
-      </div>
-      <div id="headerAdd">
-        <a href="#" id="">광고 300X82</a>
-      </div>
-    </div>
-  </header>
+
 
   <div id="wrapper">
     <div id="loginHeader">
@@ -120,7 +99,7 @@
     </div>
   </div>
   
-
+  <sc-footer></sc-footer>
 
 
 </body>

@@ -20,15 +20,17 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/lib/angular.min.js"></script>
+    
     <script src="/lib/jquery-1.11.2.min.js"></script>
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>    
-
-    <!-- Custom Javascripts -->    
-    <script src="/javascripts/loginTest.js"></script>    
+    <script src="/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
     <script src="/lib/less.min.js"></script>
+    <script src="/javascripts/loginTest.js"></script>    
+    
+    <script src="/lib/sportschallenge.js"></script>    
+
+
+
     <script src="/socket.io/socket.io.js"></script>
 
     <!-- 소켓 팩토리 -->
@@ -41,54 +43,19 @@
       });
     </script>
 
+    <script>
+      $(document).ready(function(){
+        $('#test').hide();
+      })
+    </script>
 
 
 </head>
-<body>
-  <header>
-    <div id="navLink">
-      <span id="customCenter"><a href="#">고객센터</a></span>  
-      <span id="span4">|</span>
-      <span id="userInfo"><a href="#">회원정보</a></span>
-      <span id="span3">|</span>
-      <span id="logout"><a href="/logout">로그아웃</a></span>
-      <span id="span2">|</span>
-      <span id="register"><a href="/register">회원가입</a></span>
-      <span id="span1">|</span>
-      <span id="login"><a href="/login">로그인</a></span>
-    </div>
+<body ng-app="SportsChallenge">
 
-    <div id="navMainLink">
-      <div>
-        <a href="/" id="logo">LOGO</a>
-        <a href="#" class="headerLinks">포럼</a>
-        <a href="#" class="headerLinks">커뮤니타</a>
-        <a href="#" class="headerLinks">장터</a>
-        <a href="#" class="headerLinks">이벤트</a>
-      </div>
-      <div id="headerAdd">
-        <a href="#" id="">광고 300X82</a>
-      </div>
-    </div>
-  </header>
 
-  <div id="mainAdds">
-    <div id="asideAdds">
-      <div id="asideAdd1"><a href="#">광고 249X49</a></div>
-      <div id="asideAdd2"><a href="#">광고 249X49</a></div>
-      <div id="asideAdd3"><a href="#">광고 249X49</a></div>
-      <div id="asideAdd4"><a href="#">광고 249X49</a></div>
-      <div id="asideAdd5"><a href="#">광고 249X49</a></div>
-    </div>
-
-    <div id="sectionAdds">
-      <a href="#">광고 738X248</a>
-    </div>
-  </div>
-
-  <div id="barAdd">
-    <a href="#">광고 988X56</a>
-  </div>
+  <sc-header></sc-header>
+  <scindex-Add></scindex-Add>
 
   <section>
     <div id="sectionNav">
@@ -106,38 +73,17 @@
       </div>
     </div>
     <div id="sectionContents">
-
     </div>
   </section>
 
+  <div id="test">
+    <h1>Hello, world! <span id="isLogin"><%= user %></span></h1>
+    <a href="/login">login</a>
+    <br />
+    <a href="/challenge">Challenge</a>
+  </div>
 
-   
-    
-
-
-
-    <div id="test">
-      <h1>Hello, world! <span id="isLogin"><%= user %></span></h1>
-
-
-
-      <a href="/login">login</a>
-
-      <br />
-      <a href="/challenge">Challenge</a>
-
-    </div>
-
-
-
-
-
-
-  
-
-
-
-    
+  <sc-footer></sc-footer>
 
 </body>
 </html>

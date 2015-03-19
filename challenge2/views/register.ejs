@@ -1,4 +1,63 @@
-<body>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sports Challenge Register</title>
+
+    <!-- Bootstrap -->
+    <link href="/lib/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CustomCSS -->
+    <link rel="stylesheet/less" type="text/css" href="/stylesheets/init.less" />
+    <link rel="stylesheet/less" type="text/css" href="/stylesheets/index.less" />
+    <link rel="stylesheet/less" type="text/css" href="/stylesheets/login.less" />
+    <link rel="stylesheet/less" type="text/css" href="/stylesheets/register.less" />
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+    <script src="/lib/angular.min.js"></script>
+    
+    <script src="/lib/jquery-1.11.2.min.js"></script>
+    <script src="/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+    <script src="/lib/less.min.js"></script>
+    <script src="/javascripts/loginTest.js"></script>    
+    
+    <script src="/lib/sportschallenge.js"></script>    
+
+
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- 소켓 팩토리 -->
+    <script>
+      var socketCallback;
+
+      var socket = io.connect();
+      socket.on('message', function(data){
+        socketCallback && socketCallback(data);
+      });
+    </script>
+
+    <script>
+      $(document).ready(function(){
+        $('#test').hide();
+      })
+    </script>
+
+
+</head>
+<body ng-app="SportsChallenge">
+
+	<sc-header></sc-header>
+
+
 	<form method="post">
 		<h2>Register</h2>
 		<% if(typeof errors != 'undefined') { %>
@@ -29,4 +88,8 @@
 		<br/>
 		<input type="submit" value="Login" />
 	</form>
+
+
+
+	<sc-footer></sc-footer>
 </body>

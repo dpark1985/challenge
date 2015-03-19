@@ -1,7 +1,16 @@
+@bgColor: #EDE9CF;
+@layerColor: #F0F0F2;
+@borderColor: #362524;
+
 @mainWidth: 990px;
-@bgColor: #ECF0F1;
-@layerColor: #FFF;
-@borderColor: #3498DB;
+
+/* header */
+@headerHeight: 105px;
+@navLinkHeight: 21px;
+@navMainLinkHeight: 84px;
+
+/* footer */
+@footerHeight: 172px;
 
 body{
 	#wrapper{
@@ -15,11 +24,11 @@ body{
 			margin: 20px 0 0 50px;
 			h1{
 				font-size: 3em;
-			}
+			} /* h1 */
 			h2{
 				font-size: 1em;
-			}
-		}
+			} /* h2 */
+		} /* #loginHeader */
 		#loginContent{
 			width: 100%;
 			height: 225px;
@@ -37,9 +46,9 @@ body{
 					width: 450px;
 					margin: auto;
 					margin-top: 24.5px;
-				}
+				} /* form */
 			
-			}
+			} /* #loginForm */
 
 			#loginAdd{
 				float: left;
@@ -58,11 +67,15 @@ body{
 
 					line-height: 225px;
 					text-align: center;
-				}
+				} /* a */
 
-			}
-		}
+			} /* #loginAdd */
+		} /* loginContent */
 
+	} /* #wrapper */
+	footer{
+		position: fixed;
+		bottom: 0;
 	}
 
-}
+} /* body */
