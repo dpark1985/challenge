@@ -22,40 +22,39 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
 
-    <script src="/lib/angular.min.js"></script>
     
     <script src="/lib/jquery-1.11.2.min.js"></script>
     <script src="/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
     <script src="/lib/less.min.js"></script>
-    <script src="/javascripts/loginTest.js"></script>    
-    
-    <script src="/lib/sportschallenge.js"></script>    
-
-
-
-    <script src="/socket.io/socket.io.js"></script>
-
-    <!-- 소켓 팩토리 -->
-    <script>
-      var socketCallback;
-
-      var socket = io.connect();
-      socket.on('message', function(data){
-        socketCallback && socketCallback(data);
-      });
-    </script>
-
-    <script>
-      $(document).ready(function(){
-        $('#test').hide();
-      })
-    </script>
+ 
+ 
 
 
 </head>
-<body ng-app="SportsChallenge">
+<body>
 
-	<sc-header></sc-header>
+   <header>
+    <div id="navLink">
+      <span id="customCenter"><a href="#">고객센터</a></span>  
+      
+      <span id="span2">|</span>
+      <span id="register"><a href="/register">회원가입</a></span>
+      <span id="span1">|</span>
+      <span id="login"><a href="/login">로그인</a></span>
+    </div>
+    <div id="navMainLink">
+      <div>
+        <a href="/" id="logo">LOGO</a>
+        <a href="#" class="headerLinks">포럼</a>
+        <a href="#" class="headerLinks">커뮤니타</a>
+        <a href="#" class="headerLinks">장터</a>
+        <a href="#" class="headerLinks">이벤트</a>
+      </div>
+      <div id="headerAdd">
+        <a href="#" id="">광고 300X82</a>
+      </div>
+    </div>
+  </header>
 
 
 	<form method="post">
@@ -91,5 +90,36 @@
 
 
 
-	<sc-footer></sc-footer>
+  <footer>
+    <div id="footerWrapper">
+
+      <div id="footerInfo">
+        <div id="footerLinks">
+          <a href="#">회사소개</a>
+          <a href="#">서비스약관 및 정책</a>
+          <a href="#">개인정보취급방침</a>
+          <a href="#">광고문의</a>
+          <a href="#">투자정보</a>
+          <a href="#">문의하기</a>
+          <a href="#">제안하기</a>
+          <a href="#">고객센터</a>
+        </div>
+        <div id="footerText">
+          <pre>
+
+(주) 온오프믹스 사업자등록번호 221-81-34988 | 통신판매업 신고번호 제2014-서울강남-제016335 | 개인정보관리책임자 이상규
+대표이사 양준철 | 서울특별시 서초구 신반포로 45길 22 은양빌딩 5층 (강남사무소 : 서울특별시 강남구 삼성로 86길 11 거봉빌딩 902호)
+Tel 02-6080-5579 | Fax 02-6280-8089 | Email webmaster@onoffmix.com
+온오프믹스는 통신판매중계자이며 모임에 대한 당사자 및 주최자가 아닙니다. 따라서 온오프믹스는 등록된 모임에 대하여 책임을 지지 않습니다.
+copyright © ONOFFMIX.COM, All Right Reserved.
+         
+          </pre>
+
+        </div>
+      </div>
+
+      <div id="footerAdds">
+      </div>
+    </div>
+  </footer>
 </body>

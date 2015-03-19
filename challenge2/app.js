@@ -22,6 +22,7 @@ var customAuth = require('./routes/auth');
 var customMain = require('./routes/main');
 var customSocket = require('./routes/socket');
 var customChallenge = require('./routes/challenge');
+var customFeeds = require('./routes/feeds');
 
 //데이터베이스 연결
 var db = mongojs.connect('Challenge', ['users', 'events', 'teams']);
@@ -77,7 +78,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 customMain.active(app, everyauth, db);
 customSocket.active(io, client, sessionStore);
 customChallenge.active(app, db);
-
+customFeeds.active(app, db);
 
 
 

@@ -10,7 +10,5 @@ exports.active = function(app, everyauth, db){
 			});
 		});		
 	});
-	app.post('/', function(req, res, next){
 
-	});
 };

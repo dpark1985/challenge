@@ -17,6 +17,7 @@ $(document).ready(function(){
     $('#userInfo').hide();
     $('#span3').hide();
     $('#span4').hide();
+
   }
 
   /* 로그아웃 클릭 되었을때 */

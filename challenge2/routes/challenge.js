@@ -10,9 +10,10 @@ exports.active = function(app, db){
 		db.teams.insert({
 			teamNum: 1,
 			sports: {
-				sportsType: req.body.name,
+				sportsType: req.body.sportsType,
 				sportsMin: 11
 			},
+			challengeName: req.body.ChallengeName,
 			teamBuilt: new Date(),
 			teamMember: [],
 			teamComplete: false
