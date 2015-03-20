@@ -23,6 +23,7 @@ var customMain = require('./routes/main');
 var customSocket = require('./routes/socket');
 var customChallenge = require('./routes/challenge');
 var customFeeds = require('./routes/feeds');
+var customPost = require('./routes/post');
 
 //데이터베이스 연결
 var db = mongojs.connect('Challenge', ['users', 'events', 'teams']);
@@ -75,11 +76,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //라우터
-customMain.active(app, everyauth, db);
+customMain.active(app, db);
 customSocket.active(io, client, sessionStore);
 customChallenge.active(app, db);
 customFeeds.active(app, db);
-
+customPost.active(app, db);
 
 
 // catch 404 and forward to error handler

@@ -71,7 +71,6 @@ exports.active = function(everyauth, db){
 				promise.fulfill([getCode('auth:1')]);
 			}
 		});
-
 		return promise;
 	});
 	auth.registerSuccessRedirect('/');
@@ -92,14 +91,11 @@ exports.active = function(everyauth, db){
 			if(error){
 				promise.fulfill([getCode('auth:1')]);
 			} else if(user){
-
-
 				promise.fulfill(user);
 			} else{
 				promise.fulfill([getCode('auth:2')]);
 			}
 		});
-
 		return promise;
 	});
 	auth.loginSuccessRedirect('/');
