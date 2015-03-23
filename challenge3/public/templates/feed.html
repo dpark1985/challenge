@@ -1,0 +1,12 @@
+<div ng-repeat="post in posts">
+	<p>{{post.teamNum}} <a href="/challenge/{{post._id.toString()}}" target="_blank">{{post._id.toString()}}</a></p>
+	<br />
+		<div ng-repeaet="sport in post.sports">
+			<p>{{sport.sportsType}}</p>
+			<p>{{sport.sportsMin}}</p>
+		</div>
+	<br />
+	<p>{{post.challengeName}}</p>
+	<p>{{post.teamBuilt}}</p>
+	<hr />
+</div>
