@@ -1,100 +1,144 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sports Challenge Register</title>
+    <title>Sign up &middot; Sports Challenge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <!-- Bootstrap -->
-    <link href="/lib/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Le styles -->
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/jkit.css" rel="stylesheet">
 
-    <!-- CustomCSS -->
-    <link rel="stylesheet/less" type="text/css" href="/stylesheets/init.less" />
-    <link rel="stylesheet/less" type="text/css" href="/stylesheets/index.less" />
-    <link rel="stylesheet/less" type="text/css" href="/stylesheets/register.less" />
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/animate.css" rel="stylesheet">
 
-      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
+    <link href="/stylesheets/app.css" rel="stylesheet">
+    <link href="/stylesheets/font-awesome.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-responsive.css" rel="stylesheet">
 
-    
+
+
+    <style type="text/css">
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-image: -moz-radial-gradient(50% 50%, circle farthest-side, rgb(82, 184, 235) 0%, rgba(20, 137, 182, 0.78) 100%);
+            background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 154.5, color-stop(0, rgb(82, 184, 235)), color-stop(1, rgba(20, 137, 182, 0.78)));
+            background-image: -webkit-radial-gradient(50% 50%, circle farthest-side, rgb(82, 184, 235) 0%, rgba(20, 137, 182, 0.78) 100%);
+            background-image: -ms-radial-gradient(50% 50%, circle farthest-side, rgb(82, 184, 235) 0%, rgba(20, 137, 182, 0.78) 100%);
+            background-image: radial-gradient(50% 50%, circle farthest-side, rgb(82, 184, 235) 0%, rgba(20, 137, 182, 0.78) 100%);
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100,FinishOpacity=78,Style=2)";
+            filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100, FinishOpacity=78, Style=2);
+        }
+        
+        .form-signin {
+            max-width: 500px;
+            padding: 130px 29px 29px;
+            margin: 0 auto 20px;
+            background-color: transparent;
+            border: 0px solid #e5e5e5;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+        }
+        
+        .form-signin .form-signin-heading {
+            color: #CAE8F7;
+            margin-bottom: 25px;
+            font-size: 23px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        
+        .form-signin a {
+            color: black;
+            font-weight: 400;
+            font-size: 10px;
+        }
+        
+        .form-signin input[type="text"],
+        .form-signin input[type="password"] {
+            font-size: 16px;
+            height: auto;
+            margin-bottom: 15px;
+            padding: 7px 9px;
+            opacity: 0.9;
+            border: 1px solid #28759B;
+        }
+        
+        .form-signin span {
+            font-size: 13px;
+            color: white;
+            float: right;
+        }
+        
+        .form-signin label {
+            color: white;
+        }
+        
+        .form-signin .btn {
+            font-family: inherit;
+        }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+</head>
+
+<body class="animated fadeIn">
+
+    <div class="container">
+
+
+
+        <form class="form-signin" method="post">
+
+            <img src="img/logo-cs.png">
+            <h2 class="form-signin-heading">Register it's Free<span >Already a user? <a href="/login">Login</a></span></h2>
+
+
+            <input type="text" class="input-block-level" placeholder="Username" name="login">  
+
+            <input type="password" class="input-block-level" placeholder="Password" name="password">
+
+            <input type="password" class="input-block-level" placeholder="Confirm Password" name="confirm-password">
+
+            <input type="text" class="input-block-level" placeholder="Name" name="name">
+
+            <input type="text" class="input-block-level" placeholder="Phone" name="phone">
+
+            <input type="text" class="input-block-level" placeholder="Address" name="addr">
+
+
+            <button class="btn btn-medium " type="submit"><i class="icon-spinner ast-alt icon-spin"></i> Submit</button>
+        </form>
+
+    </div>
+    <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/lib/jquery.js"></script>
+    <script src="/lib/bootstrap.js"></script>
     <script src="/lib/angular.min.js"></script>
     <script src="/lib/angular-route.min.js"></script>
-    <script src="/lib/jquery-1.11.2.min.js"></script>
-    <script src="/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
-    <script src="/lib/less.min.js"></script>
- 
- 
-    <script src="/javascripts/register.js"></script>
-
-    <script>
-
-    </script>
-
-</head>
-<body ng-app="register">
-
-   <header>
-    <div id="navLink">
-      <span id="customCenter"><a href="#">고객센터</a></span>   
-      <span id="span2">|</span>
-      <span id="register"><a href="/register">회원가입</a></span>
-      <span id="span1">|</span>
-      <span id="login"><a href="/login">로그인</a></span>
-    </div>
-    <div id="navMainLink">
-      <div>
-        <a href="/" id="logo">LOGO</a>
-        <a href="#" class="headerLinks">포럼</a>
-        <a href="#" class="headerLinks">커뮤니타</a>
-        <a href="#" class="headerLinks">장터</a>
-        <a href="#" class="headerLinks">이벤트</a>
-      </div>
-      <div id="headerAdd">
-        <a href="#" id="">광고 300X82</a>
-      </div>
-    </div>
-  </header>
-
-  <div id="wrapper" ng-view></div>
-
-
-  <footer>
-    <div id="footerWrapper">
-
-      <div id="footerInfo">
-        <div id="footerLinks">
-          <a href="#">회사소개</a>
-          <a href="#">서비스약관 및 정책</a>
-          <a href="#">개인정보취급방침</a>
-          <a href="#">광고문의</a>
-          <a href="#">투자정보</a>
-          <a href="#">문의하기</a>
-          <a href="#">제안하기</a>
-          <a href="#">고객센터</a>
-        </div>
-        <div id="footerText">
-          <pre>
-
-(주) 온오프믹스 사업자등록번호 221-81-34988 | 통신판매업 신고번호 제2014-서울강남-제016335 | 개인정보관리책임자 이상규
-대표이사 양준철 | 서울특별시 서초구 신반포로 45길 22 은양빌딩 5층 (강남사무소 : 서울특별시 강남구 삼성로 86길 11 거봉빌딩 902호)
-Tel 02-6080-5579 | Fax 02-6280-8089 | Email webmaster@onoffmix.com
-온오프믹스는 통신판매중계자이며 모임에 대한 당사자 및 주최자가 아닙니다. 따라서 온오프믹스는 등록된 모임에 대하여 책임을 지지 않습니다.
-copyright © ONOFFMIX.COM, All Right Reserved.
-         
-          </pre>
-
-        </div>
-      </div>
-
-      <div id="footerAdds">
-      </div>
-    </div>
-  </footer>
-
 
 </body>
+
+</html>

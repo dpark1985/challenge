@@ -3,29 +3,16 @@ $(document).ready(function(){
   
   /* 로그인 되었을때 */
   if(userName != "Please login"){
-    $('#login').hide();
-    $('#register').hide();
-    $('#span2').hide();
-    $('#span1').hide();
-
-    $('#logout').show();
-    $('#userInfo').show();
-    $('#span3').show();
-    $('#span4').show();
+    alert('test');
+    $('#userLogin').html("");
+    $('#userLogin').html("Hi, <%= user %> <a href='/logout' id='logout'>Logout</a>");
   } else{
-    $('#logout').hide();
-    $('#userInfo').hide();
-    $('#span3').hide();
-    $('#span4').hide();
+
   }
 
   /* 로그아웃 클릭 되었을때 */
   $('#logout').click(function(){
-    $('#login').show();
-    $('#register').show();
-    $('#span1').show();
-    $('#span2').show();
-
-    $('#logout').hide(); 
+    $('#userLogin').html("");
+    $('#userLogin').html("<a href='/login' class='navbar-link'>login</a> or <a href='/register' class='navbar-link'>register</a>");
   });
 });

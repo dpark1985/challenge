@@ -19,7 +19,8 @@
     "nconf": "~0.7.1",
     "express-session": "~1.10.3",
     "connect-redis": "~2.0.0",
-    "redis": "~0.12.1"
+    "redis": "~0.12.1",
+    "multer": "~0.1.8"
 
   }
 }

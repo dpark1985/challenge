@@ -16,13 +16,14 @@ var router = express.Router();
 var session = require('express-session')
 var RedisStore = require('connect-redis')(session);
 var redis = require('redis');
+var fs = require('fs');
+var multer  = require('multer');
 
 var customGlobal = require('./routes/global');
 var customAuth = require('./routes/auth');
 var customMain = require('./routes/main');
 var customSocket = require('./routes/socket');
 var customChallenge = require('./routes/challenge');
-var customPost = require('./routes/post');
 var customChallengeDetails = require('./routes/challengeDetails');
 
 
@@ -63,6 +64,7 @@ app.set('view engine', 'ejs');
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.set('port', process.env.PORT || 3000);
 app.use(logger('dev'));
+app.use(bodyParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser('your secret here'));
@@ -74,13 +76,28 @@ app.use(everyauth.middleware());
 app.use(router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(
+    multer({ 
+        dest: './public/uploads/',
+        rename: function (fieldname, filename) {
+            return Date.now()+'_'+filename;
+        },
+        onFileUploadStart: function (file) {
+            console.log(file.originalname + ' is starting ...')
+        },
+        onFileUploadComplete: function (file) {
+            console.log(file.fieldname + ' uploaded to  ' + file.path)
+            done=true;
+        }
+    })
+);
+
 
 
 //라우터
 customMain.active(app, db);
 customSocket.active(io, client, sessionStore);
-customChallenge.active(app, db);
-customPost.active(app, db, io.sockets.sockets);
+customChallenge.active(app, db, fs);
 customChallengeDetails.active(app, db);
 
 
@@ -88,7 +105,10 @@ customChallengeDetails.active(app, db);
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
-    next(err);
+    res.render('error404', {
+        message: err.message,
+        error: {}
+    });
 });
 
 // error handlers

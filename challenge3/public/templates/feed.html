@@ -1,12 +1,32 @@
-<div ng-repeat="post in posts">
-	<p>{{post.teamNum}} <a href="/challenge/{{post._id.toString()}}" target="_blank">{{post._id.toString()}}</a></p>
-	<br />
-		<div ng-repeaet="sport in post.sports">
-			<p>{{sport.sportsType}}</p>
-			<p>{{sport.sportsMin}}</p>
-		</div>
-	<br />
-	<p>{{post.challengeName}}</p>
-	<p>{{post.teamBuilt}}</p>
-	<hr />
+
+<!-- Options bar (Left Section) -->
+
+<div class="options-bar">
+    <select class="span2 pull-left" ng-model="selection" ng-options="item for item in items">
+
+    </select>
+    <span><strong>{{posts.length}}</strong>개 대회 검새</span>
+</div>
+
+<!-- End Options Bar -->
+
+
+<!-- Start Left Section -->
+
+<div class="row-fluid">
+
+    <ul class="thumbnails">
+
+        <li class="span3" ng-repeat="post in posts">
+            <div class="thumbnail">
+                <a href="/challenge/{{post._id.toString()}}"><img alt="300x200" ng-src="/uploads/{{post.eventImg}}" /></a>
+                <div class="caption">
+                    <h6><a href="/challenge/{{post._id.toString()}}">{{post.eventName}}</a></h6>
+                    <p>{{post.eventSummary}}</p>
+                </div>
+            </div>
+        </li>
+
+
+    </ul>
 </div>
