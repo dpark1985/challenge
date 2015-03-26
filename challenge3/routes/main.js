@@ -11,7 +11,7 @@ exports.active = function(app, db){
 		});		
 	});
 
-	app.get('/posts', function(req, res){
+	app.get('/all', function(req, res){
 		db.teams.find(function(error, posts){
 			res.json(posts);
 		});

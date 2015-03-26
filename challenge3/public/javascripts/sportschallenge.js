@@ -4,10 +4,10 @@ var challengeMain = angular.module('challengeMain', ['ngRoute'], function($route
 	  templateUrl: '/templates/feed.html',
 	  controller: function($scope, $http, $socket, $scroll){
 		var time = new Date().getTime();
-		var url = '/posts?dummy=' + Date.now();
+		var url = '/all?dummy=' + Date.now();
 
 		$http.get(url).success(function(data, status){
-		  $scope.posts = data;
+		  $scope.teams = data;
 
 		  if(data.length != 0) {time = data[data.length -1].regdate;}
 		});	
@@ -15,15 +15,27 @@ var challengeMain = angular.module('challengeMain', ['ngRoute'], function($route
 		$scope.items = ['전체', '마감순', 'other'];
 		$scope.selection = $scope.items[0];
 
+
+
 		$scope.change = function() {
+			$scope.teams = '';
+
 			if($scope.selection == "전체"){
+				url = '/all?dummy=' + Date.now();;
 				$http.get(url).success(function(data, status){
-				  $scope.posts = data;
+				  $scope.teams = data;
 
 				  if(data.length != 0) {time = data[data.length -1].regdate;}
 				});	
 			}
+
+
+
 		};
+
+
+
+
 
 	  }
 	});

@@ -182,7 +182,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff5bbbeb,endCol
 #info-unit .alert-block {position: relative;bottom: 30px; padding-top: 34px;z-index: 1;}
 #info-unit .alert-info .btn-success {background: white; color: #1596C7;}
 #info-unit .alert-info h4 {color: #1596C7; font-weight: 600;}
-#info-unit  .alert-block p + p {margin-top: 13px;}
+#info-unit .alert-block p {margin-top: 13px;}
 #info-unit .alert-block > p, .alert-block > ul {color: grey;font-size: 13px;line-height: 32px;}
 #info-unit .alert-info {
   font-family: inherit;

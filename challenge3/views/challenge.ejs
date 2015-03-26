@@ -9,16 +9,22 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
-    <link href="/stylesheets/jkit.css" rel="stylesheet">
 
+    <link href="/stylesheets/jkit.css" rel="stylesheet">
     <link href="/stylesheets/bootstrap.css" rel="stylesheet">
     <link href="/stylesheets/animate.css" rel="stylesheet">
+    <link href="/stylesheets/jquery-ui.css" rel="stylesheet">
 
     <link href="/stylesheets/app.css" rel="stylesheet">
     <link href="/stylesheets/font-awesome.css" rel="stylesheet">
     <link href="/stylesheets/bootstrap-responsive.css" rel="stylesheet">
 
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
 
 
     <style type="text/css">
@@ -35,10 +41,10 @@
         }
         
         .form-signin {
-            max-width: 500px;
+            max-width: 1000px;
             padding: 130px 29px 29px;
             margin: 0 auto 20px;
-            background-color: transparent;
+
             border: 0px solid #e5e5e5;
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px;
@@ -68,23 +74,14 @@
             height: auto;
             margin-bottom: 15px;
             padding: 7px 9px;
-            opacity: 0.9;
+
             border: 1px solid #28759B;
         }
         
-        .form-signin span {
-            font-size: 13px;
-            color: white;
-            float: right;
-        }
+
         
-        .form-signin label {
-            color: white;
-        }
-        
-        .form-signin .btn {
-            font-family: inherit;
-        }
+
+
     </style>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -92,13 +89,10 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="../assets/ico/favicon.png">
 
+
+
+    <script src="/lib/ckeditor/ckeditor.js"></script>
    
 
 </head>
@@ -119,11 +113,68 @@
             <textarea type="text" class="input-block-level" placeholder="대회 내용을 간단히 요약하여 입력해 주세요." name="eventSummary"></textarea>
 
            
-            대표이미지: <input type="file" id="file-input" name="eventImg"> <br />
+            대표이미지(300*400px, 1MB이하): <input type="file" id="file-input" name="eventImg"> 
+            <br />
+            <br />
 
 
+            <h2 class="form-signin-heading">상세내용 입력 </h2>
+            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                대회 상세내용을 입력해 주세요.
+            </textarea>
+            <br />
+            <br />
+
+            <h2 class="form-signin-heading">일정 장소 정보 입력 </h2>
+            <div style="width: 50%; float:left;">
+                <h4>대회 일정</h4>
+                <input type="text" id="challengeStart" name="challengeStart" placeholder="부터">
+                <input type="text" id="challengeEnd" name="challengeEnd" placeholder="까지">
+            </div>
+            <div style="width: 50%; float:left;">
+                <h4>대회 신청 마감</h4>
+                <input type="text" id="regiStart" name="regiStart" placeholder="부터">
+                <input type="text" id="regiEnd" name="regiEnd" placeholder="까지">
+            </div>
+            <br />
+            <div>
+                <h4>대회 장소</h4>
+                <input type="text" class="input-block-level" placeholder="대회 주소" name="eventAddr">
+
+                <div id="map" style="width:998px;height:500px; border: 1px solid #28759B;"></div>
+            </div>
+            <br />
+            <br />
+
+
+            <h2 class="form-signin-heading">연락처 문의사항 </h2>
+            <div style="width: 50%; float:left;">
+                <input type="text" id="contactName1" name="contactName1" placeholder="이름">
+                <input type="text" id="contactPhone1" name="contactPhone1" placeholder="전화번호">
+            </div>
+            <div style="width: 50%; float:left;">
+                <input type="text" id="contactName2" name="contactName2" placeholder="이름">
+                <input type="text" id="contactPhone2" name="contactPhone2" placeholder="전화번호">
+            </div>
+            <div style="width: 50%; float:left;">
+                <input type="text" id="contactName3" name="contactName3" placeholder="이름">
+                <input type="text" id="contactPhone3" name="contactPhone3" placeholder="전화번호">
+            </div>
+            <div style="width: 50%; float:left;">
+                <input type="text" id="contactName4" name="contactName4" placeholder="이름">
+                <input type="text" id="contactPhone4" name="contactPhone4" placeholder="전화번호">
+            </div>
+
+
+            <br />
+            <br />
             <button class="btn btn-medium " type="submit"><i class="icon-spinner ast-alt icon-spin"></i> Submit</button>
+
+
         </form>
+
+
+
 
     </div>
     <!-- /container -->
@@ -131,10 +182,12 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/lib/jquery.js"></script>
+    <script src="/lib/jquery-1.11.2.min.js"></script>
     <script src="/lib/bootstrap.js"></script>
-    <script src="/lib/angular.min.js"></script>
-    <script src="/lib/angular-route.min.js"></script>
+    <script src="/lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=6b55aab3694202fb13b303a6845d399b"></script>
+
+   
 
      <script>
       var fileInput = document.getElementById('file-input');
@@ -157,6 +210,88 @@
         }
       };
 
+    </script>
+    <script>
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace( 'editor1' );
+    </script>
+    <script>
+        $(function() {
+            $( "#challengeStart" ).datepicker();
+            $( "#challengeEnd" ).datepicker();
+            $( "#regiStart" ).datepicker();
+            $( "#regiEnd" ).datepicker();
+        });
+    </script>
+    <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                level: 4 // 지도의 확대 레벨 
+            }; 
+
+        var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+
+        // HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
+        if (navigator.geolocation) {
+            
+            // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+            navigator.geolocation.getCurrentPosition(function(position) {
+                
+                var lat = position.coords.latitude, // 위도
+                    lon = position.coords.longitude; // 경도
+                
+                var locPosition = new daum.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+                    message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
+                
+                // 마커와 인포윈도우를 표시합니다
+                displayMarker(locPosition, message);
+                    
+              });
+            
+        } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+            
+            var locPosition = new daum.maps.LatLng(33.450701, 126.570667),    
+                message = 'geolocation을 사용할수 없어요..'
+                
+            displayMarker(locPosition, message);
+        }
+
+
+
+
+
+
+
+
+        // 지도에 마커와 인포윈도우를 표시하는 함수입니다
+        function displayMarker(locPosition, message) {
+
+            // 마커를 생성합니다
+            var marker = new daum.maps.Marker({  
+                map: map, 
+                position: locPosition
+            }); 
+            // 마커가 드래그 가능하도록 설정합니다 
+            marker.setDraggable(true);
+
+            var iwContent = message, // 인포윈도우에 표시할 내용
+                iwRemoveable = true;
+
+            // 인포윈도우를 생성합니다
+            var infowindow = new daum.maps.InfoWindow({
+                content : iwContent,
+                removable : iwRemoveable
+            });
+            
+            // 인포윈도우를 마커위에 표시합니다 
+            infowindow.open(map, marker);
+            
+            // 지도 중심좌표를 접속위치로 변경합니다
+            map.setCenter(locPosition);      
+        } 
     </script>
 
 </body>
